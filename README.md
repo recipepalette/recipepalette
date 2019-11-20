@@ -19,6 +19,7 @@
 
     ```shell
     cd recipepalette
+    npm install
     gatsby develop
     ```
 
