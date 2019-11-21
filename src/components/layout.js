@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 import Container from "../components/container"
+import Login from "./login"
 
 const Layout = ({ children }) => (
   <div
@@ -34,6 +35,7 @@ const Layout = ({ children }) => (
           <Link sx={{ variant: `button.link` }} to="/my-recipes">
             My Recipes
           </Link>
+          <Login />
         </div>
       </Container>
     </header>
