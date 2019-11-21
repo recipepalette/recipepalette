@@ -94,7 +94,16 @@ git commit -m "added changes"
 git push -u origin <name-of-branch>
 ```
 
-Then you can create a pull request from the GitHub UI, or manually withe these steps:
+Stay in sync with master from time to time by pulling in the changes from master by switching to master, pulling changes, switching back to your branch, and merging master:
+
+```
+git checkout master
+git pull
+git checkout <name-of-branch>
+git merge master
+```
+
+When you are finished, you can create a pull request from the GitHub UI, or manually withe these steps:
 
 Go to master:
 
