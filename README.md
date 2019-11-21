@@ -71,6 +71,46 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 11. **`README.md`**: A text file containing useful reference information about your project.
 
+## 🌲 Developing on a new branch
+
+Pull the most recent changes from `master`:
+
+```
+git checkout master
+git pull
+```
+
+Create a new branch with a given name:
+
+```
+git checkout -b <name-of-branch>
+```
+
+Develop changes and add/commit/push them as usual:
+
+```
+git add .
+git commit -m "added changes"
+git push -u origin <name-of-branch>
+```
+
+Then you can create a pull request from the GitHub UI, or manually withe these steps:
+
+Go to master:
+
+```
+git checkout master
+git pull
+```
+
+Then merge your development branch into master:
+
+```
+git merge <name-of-branch>
+```
+
+You may need to fix merge conflicts if new updates to files were affected by your changes.
+
 ## 💫 Deploy
 
 Once the site is connected to Netlify, it can auto deploy all pushes to branches.
