@@ -18,8 +18,8 @@ const UsersQuery = gql`
 
 export default ({ data }) => {
   const { data: usersData, loading } = useQuery(UsersQuery)
-  console.log(usersData)
-  console.log(loading)
+  console.log({ usersData })
+  console.log({ loading })
 
   return (
     <Layout>
