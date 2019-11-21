@@ -20,4 +20,17 @@ export default {
     primary: "#eb7b15",
     secondary: "#e4ab15",
   },
+  button: {
+    link: {
+      textDecoration: `none`,
+      fontSize: `2`,
+      px: `3`,
+      py: `2`,
+      transition: `0.3s all`,
+      borderRadius: `1`,
+      "&:hover": {
+        backgroundColor: `border`,
+      },
+    },
+  },
 }

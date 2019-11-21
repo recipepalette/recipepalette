@@ -28,8 +28,12 @@ const Layout = ({ children }) => (
           <Link to="/">Recipe Palette</Link>
         </div>
         <div sx={{ "*+*": { marginLeft: `3` } }}>
-          <Link to="/account">Account</Link>
-          <Link to="/my-recipes">My Recipes</Link>
+          <Link sx={{ variant: `button.link` }} to="/account">
+            Account
+          </Link>
+          <Link sx={{ variant: `button.link` }} to="/my-recipes">
+            My Recipes
+          </Link>
         </div>
       </Container>
     </header>
