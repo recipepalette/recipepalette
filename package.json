@@ -29,6 +29,10 @@
     "theme-ui": "^0.2.44"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^5.0.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "cypress": "^3.6.1",
     "prettier": "^1.18.2"
   },
   "repository": {
