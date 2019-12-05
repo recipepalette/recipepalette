@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
+import { useAuth } from "react-use-auth"
 
 import Title from "../components/title"
 import Layout from "../components/layout"
@@ -22,7 +23,8 @@ export default () => {
   const { appetizer, bread, dessert, breakfast, pasta } = useStaticQuery(
     imageQuery
   )
-  
+  const { isAuthenticated } = useAuth()
+
   console.log(usersData)
   console.log(loading)
 
@@ -32,13 +34,27 @@ export default () => {
         sx={{
           textAlign: `center`,
           mt: `6`,
+          mb: `6`,
         }}
       >
         <Title>The best way to keep track of recipes</Title>
         <input
-          sx={{ px: `3`, py: `2`, mb: `6`, fontSize: `3`, minWidth: `75%` }}
+          sx={{
+            px: `3`,
+            py: `2`,
+            mx: `auto`,
+            mb: `3`,
+            fontSize: `3`,
+            minWidth: `75%`,
+            display: `block`,
+          }}
           placeholder="Find a recipe..."
         />
+        {!isAuthenticated() && (
+          <Link sx={{ variant: `button.link`, display: `inline-block` }} to="/">
+            Join for free!
+          </Link>
+        )}
       </div>
       <h2>Explore Recipes</h2>
       <div
@@ -104,5 +120,5 @@ const imageQuery = graphql`
         }
       }
     }
-  } 
+  }
 `

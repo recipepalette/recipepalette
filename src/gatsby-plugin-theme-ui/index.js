@@ -37,6 +37,7 @@ export default {
       borderStyle: `solid`,
       color: `text`,
       boxShadow: `0px 0px 4px 0px #a4a4a4`,
+      fontWeight: `bold`,
       "&:hover": {
         backgroundColor: lighten(`primary`, 0.1),
       },
@@ -51,13 +52,13 @@ export default {
         flexDirection: `row`,
         justifyContent: `space-between`,
         alignItems: `center`,
-        py: `4`,
+        py: `3`,
       },
       footer: {
         display: `flex`,
         flexDirection: `row`,
         justifyContent: `center`,
-        py: `4`,
+        py: `3`,
       },
     },
   },
