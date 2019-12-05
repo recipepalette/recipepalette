@@ -45,6 +45,7 @@ export default {
   layout: {
     container: {
       maxWidth: `960px`,
+      px: `3`,
       header: {
         display: `flex`,
         flexDirection: `row`,

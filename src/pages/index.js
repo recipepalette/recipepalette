@@ -19,7 +19,7 @@ const UsersQuery = gql`
 
 export default () => {
   const { data: usersData, loading } = useQuery(UsersQuery)
-  const { appetizer, bread, dessert, breakfast, pasta, soup } = useStaticQuery(
+  const { appetizer, bread, dessert, breakfast, pasta } = useStaticQuery(
     imageQuery
   )
   

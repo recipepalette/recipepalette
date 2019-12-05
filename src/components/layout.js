@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
 import { Container } from "@theme-ui/components"
 
 import Header from "./header"
