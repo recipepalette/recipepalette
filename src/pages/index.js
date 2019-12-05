@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { graphql, useStaticQuery } from "gatsby"
 import { useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 
 import Title from "../components/title"
 import Layout from "../components/layout"
-import { GenericCard } from "../components/cards"
+import { CategoryCard } from "../components/cards"
 
 const UsersQuery = gql`
   query {
@@ -16,8 +17,12 @@ const UsersQuery = gql`
   }
 `
 
-export default ({ data }) => {
+export default () => {
   const { data: usersData, loading } = useQuery(UsersQuery)
+  const { appetizer, bread, dessert, breakfast, pasta, soup } = useStaticQuery(
+    imageQuery
+  )
+  
   console.log(usersData)
   console.log(loading)
 
@@ -45,12 +50,59 @@ export default ({ data }) => {
           mb: `4`,
         }}
       >
-        <GenericCard name="Appetizers" />
-        <GenericCard name="Bread" />
-        <GenericCard name="Desserts" />
-        <GenericCard name="Breakfast" />
-        <GenericCard name="Pasta" />
+        <CategoryCard name="Appetizers" image={appetizer} />
+        <CategoryCard name="Bread" image={bread} />
+        <CategoryCard name="Desserts" image={dessert} />
+        <CategoryCard name="Breakfast" image={breakfast} />
+        <CategoryCard name="Pasta" image={pasta} />
       </div>
     </Layout>
   )
 }
+
+const imageQuery = graphql`
+  {
+    appetizer: file(relativePath: { eq: "appetizer.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    bread: file(relativePath: { eq: "bread.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    dessert: file(relativePath: { eq: "dessert.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    breakfast: file(relativePath: { eq: "breakfast.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    pasta: file(relativePath: { eq: "pasta.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    soup: file(relativePath: { eq: "soup.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  } 
+`
