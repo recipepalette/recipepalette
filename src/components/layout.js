@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
+import { Container } from "@theme-ui/components"
 
-import Container from "../components/container"
-import Login from "./login"
+import Header from "./header"
 
 const Layout = ({ children }) => (
   <div
@@ -12,33 +12,7 @@ const Layout = ({ children }) => (
       backgroundColor: `background`,
     }}
   >
-    <header
-      sx={{
-        borderBottom: `1px solid`,
-        borderBottomColor: `border`,
-      }}
-    >
-      <Container
-        sx={{
-          display: `flex`,
-          flexDirection: `row`,
-          justifyContent: `space-between`,
-        }}
-      >
-        <div>
-          <Link to="/">Recipe Palette</Link>
-        </div>
-        <div sx={{ "*+*": { marginLeft: `3` } }}>
-          <Link sx={{ variant: `button.link` }} to="/account">
-            Account
-          </Link>
-          <Link sx={{ variant: `button.link` }} to="/my-recipes">
-            My Recipes
-          </Link>
-          <Login />
-        </div>
-      </Container>
-    </header>
+    <Header />
     <main
       sx={{
         position: `relative`,
@@ -52,7 +26,7 @@ const Layout = ({ children }) => (
         borderTopColor: `border`,
       }}
     >
-      <Container>
+      <Container sx={{variant: `layout.container.footer`}}>
         <Link to="/">Recipe Palette</Link>
       </Container>
     </footer>
