@@ -55,7 +55,7 @@ export default {
       footer: {
         display: `flex`,
         flexDirection: `row`,
-        justifyContent: `space-between`,
+        justifyContent: `center`,
         py: `4`,
       },
     },
