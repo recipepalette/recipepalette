@@ -49,6 +49,7 @@ export default {
         display: `flex`,
         flexDirection: `row`,
         justifyContent: `space-between`,
+        alignItems: `center`,
         py: `4`,
       },
       footer: {
