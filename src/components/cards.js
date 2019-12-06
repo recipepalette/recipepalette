@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { FiBookmark, FiHeart, FiCopy } from "react-icons/fi"
+import { Card } from "@theme-ui/components"
+import BackgroundImage from "gatsby-background-image"
 
 const CardSkeleton = ({ children, ...props }) => {
   return (
@@ -12,6 +14,30 @@ const CardSkeleton = ({ children, ...props }) => {
     >
       {children}
     </div>
+  )
+}
+
+const CategoryCard = ({ image, name }) => {
+  return (
+    <BackgroundImage
+      fluid={[
+        `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))`,
+        image.childImageSharp.fluid,
+      ]}
+    >
+      <Card
+        sx={{
+          py: `5`,
+          display: `flex`,
+          justifyContent: `center`,
+          color: `background`,
+          fontSize: `5`,
+          cursor: `pointer`,
+        }}
+      >
+        {name}
+      </Card>
+    </BackgroundImage>
   )
 }
 
@@ -148,4 +174,4 @@ const NewCard = () => (
   </CardSkeleton>
 )
 
-export { NewCard, GenericCard, RecipeCard }
+export { NewCard, GenericCard, RecipeCard, CategoryCard }
