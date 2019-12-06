@@ -5,6 +5,8 @@ import { FiClock } from "react-icons/fi"
 import { Heart, Bookmark, Copy } from "./icons"
 import { Card } from "@theme-ui/components"
 
+import BackgroundImage from "gatsby-background-image"
+
 const CardSkeleton = ({ children, ...props }) => {
   return (
     <div
@@ -30,6 +32,30 @@ const convertTime = time => {
   return time
 }
 
+const CategoryCard = ({ image, name }) => {
+  return (
+    <BackgroundImage
+      fluid={[
+        `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))`,
+        image.childImageSharp.fluid,
+      ]}
+    >
+      <Card
+        sx={{
+          py: `5`,
+          display: `flex`,
+          justifyContent: `center`,
+          color: `background`,
+          fontSize: `5`,
+          cursor: `pointer`,
+        }}
+      >
+        {name}
+      </Card>
+    </BackgroundImage>
+  )
+}
+
 const RecipeCard = ({
   name = `Recipe Name`,
   hearts = 5,
@@ -50,12 +76,12 @@ const RecipeCard = ({
         position: `relative`,
         minHeight: 150,
         p: `3`,
-        backgroundColor: darken(`background`, .01),
+        backgroundColor: darken(`background`, 0.01),
         transition: `0.3s all`,
         boxShadow: `0px 2px 4px 0px rgba(225, 227, 229, 0.75)`,
         "&:hover": {
           boxShadow: `0px 3.5px 6px 0px rgba(225, 227, 229, 0.75)`,
-          backgroundColor: darken(`background`, .035),
+          backgroundColor: darken(`background`, 0.035),
         },
       }}
     >
@@ -188,4 +214,4 @@ const NewCard = () => (
   </CardSkeleton>
 )
 
-export { NewCard, GenericCard, RecipeCard, convertTime }
+export { NewCard, GenericCard, RecipeCard, CategoryCard }
